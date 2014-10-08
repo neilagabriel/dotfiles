@@ -1,5 +1,6 @@
-"-----------------------------------------------------------------------------
-" Vundle Setup
+" vim: foldmethod=marker
+
+" Vundle Setup {{{1
 "-----------------------------------------------------------------------------
 
 set nocompatible   " Disable vi-compatibility
@@ -40,18 +41,15 @@ Bundle 'neilagabriel/vim-geeknote'
 call vundle#end()
 filetype plugin indent on 
 
-"-----------------------------------------------------------------------------
-" Powerline setup
+" Powerline setup {{{1
 "-----------------------------------------------------------------------------
 
 set laststatus=2   " Always show the statusline
 set encoding=utf-8 " Necessary to show Unicode glyphs
 let g:Powerline_symbols = 'fancy'
-
 set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
 
-"-----------------------------------------------------------------------------
-" Backup/Persistance Settings
+" Backup/Persistance Settings {{{1
 "-----------------------------------------------------------------------------
 
 set undodir=~/.vim/tmp/undo//
@@ -62,8 +60,7 @@ set undolevels=100
 
 nnoremap <F12> :GundoToggle<CR>
 
-"-----------------------------------------------------------------------------
-" Misc
+" Misc {{{1
 "-----------------------------------------------------------------------------
 
 syntax on
@@ -73,6 +70,7 @@ set smartindent
 set tabstop=4
 set shiftwidth=4
 set expandtab
+set nowrap
 
 " disable all error bells
 set noerrorbells visualbell t_vb=
@@ -85,7 +83,6 @@ nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 " Disable syntax highlighting in diff mode
 if &diff
     syntax off
-    set diffopt+=iwhite
 endif
 
 " Color-related settings.
@@ -103,19 +100,16 @@ noremap <Down> <NOP>
 noremap <Left> <NOP>
 noremap <Right> <NOP>
 
-"-----------------------------------------------------------------------------
-" Android Setup
+" Android Setup {{{1
 "-----------------------------------------------------------------------------
 
 autocmd BufNewFile,BufRead */kernel/* set noexpandtab
 autocmd BufNewFile,BufRead */kernel/* set tabstop=8
 
-"-----------------------------------------------------------------------------
-" Cucumbertables (requires tabular)
-"
-" https://gist.github.com/tpope/287147
+" Cucumbertables (requires tabular) {{{1
 "-----------------------------------------------------------------------------
 
+" https://gist.github.com/tpope/287147
 "inoremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>
 function! s:align()
   let p = '^\s*|\s.*\s|\s*$'
@@ -128,28 +122,27 @@ function! s:align()
   endif
 endfunction
 
-"-----------------------------------------------------------------------------
-" Cscope/Ctags Setup
+" Cscope/Ctags Setup {{{1
 "-----------------------------------------------------------------------------
 
 " Show cscope results in quickfix window - enables cn[ext]/cp[rev]
 set cscopequickfix=s-,c-,d-,i-,t-,e-
 set tags=./tags,tags,$TOP/tags
 
-"-----------------------------------------------------------------------------
-" UltiSnips Configuration
+" UltiSnips Configuration {{{1
 "-----------------------------------------------------------------------------
 
 let g:UltiSnipsExpandTrigger="<c-k>"
 let g:UltiSnipsJumpForwardTrigger="<c-k>"
 let g:UltiSnipsJumpBackwardTrigger="<s-c-j>"
 
-"-----------------------------------------------------------------------------
-" GeekNote Utilities
+" GeekNote Configuration {{{1
 "-----------------------------------------------------------------------------
 
-function! GeekNote()
-  !geeknote create --title "`cat % | head -n1`" --content "`cat % | tail -n +2`"
-endfunction
-noremap <C-e> :call GeekNote()<cr>
+noremap <F8> :Geeknote<cr>
 
+" Spell Check Configuration {{{1
+"-----------------------------------------------------------------------------
+
+set nospell
+set spelllang=en_us
