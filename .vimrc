@@ -27,7 +27,6 @@ Bundle 'Lokaltog/powerline'
 Bundle 'godlygeek/tabular'
 Bundle 'christoomey/vim-tmux-navigator'
 Bundle 'SirVer/ultisnips'
-Bundle "myusuf3/numbers.vim"
 Bundle 'honza/vim-snippets'
 Bundle 'tpope/vim-vinegar'
 Bundle 'tpope/vim-fugitive'
@@ -89,7 +88,7 @@ endif
 set t_Co=256
 set background=dark
 
-colorscheme kolor
+colorscheme corporation
 
 highlight Normal ctermbg=NONE
 highlight nonText ctermbg=NONE
@@ -140,6 +139,8 @@ let g:UltiSnipsJumpBackwardTrigger="<s-c-j>"
 "-----------------------------------------------------------------------------
 
 noremap <F8> :Geeknote<cr>
+
+autocmd FileType geeknote setlocal nonumber
 
 " Spell Check Configuration {{{1
 "-----------------------------------------------------------------------------
