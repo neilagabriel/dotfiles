@@ -147,3 +147,10 @@ autocmd FileType geeknote setlocal nonumber
 
 set nospell
 set spelllang=en_us
+
+" Additional (Private) Configuration {{{1
+"-----------------------------------------------------------------------------
+
+if filereadable(glob("~/.vimrc.private")) 
+  source ~/.vimrc.private
+endif
