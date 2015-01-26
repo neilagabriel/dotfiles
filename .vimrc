@@ -130,9 +130,9 @@ set tags=./tags,tags,$TOP/tags
 " UltiSnips Configuration {{{1
 "-----------------------------------------------------------------------------
 
-let g:UltiSnipsExpandTrigger="<c-k>"
-let g:UltiSnipsJumpForwardTrigger="<c-k>"
-let g:UltiSnipsJumpBackwardTrigger="<s-c-j>"
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 " GeekNote Configuration {{{1
 "-----------------------------------------------------------------------------
@@ -140,6 +140,7 @@ let g:UltiSnipsJumpBackwardTrigger="<s-c-j>"
 noremap <F8> :Geeknote<cr>
 
 autocmd FileType geeknote setlocal nonumber
+autocmd Filetype markdown setlocal spell
 
 " Spell Check Configuration {{{1
 "-----------------------------------------------------------------------------
