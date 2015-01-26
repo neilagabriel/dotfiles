@@ -34,7 +34,6 @@ Bundle 'tpope/vim-abolish'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-dispatch'
-Bundle 'neilagabriel/vim-perforce'
 Bundle 'neilagabriel/vim-geeknote'
 
 call vundle#end()
@@ -88,7 +87,7 @@ endif
 set t_Co=256
 set background=dark
 
-colorscheme corporation
+colorscheme holokai
 
 highlight Normal ctermbg=NONE
 highlight nonText ctermbg=NONE
